@@ -1,0 +1,12 @@
+[build]
+command = "npm run build"
+
+[site]
+bucket = ".next"
+
+[dev]
+port = 3000
+
+[env.production]
+compatibility_date = "2023-06-28"
+compatibility_flags = ["nodejs_compat"] 
