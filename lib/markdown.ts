@@ -12,6 +12,6 @@ export function parseMarkdownFile(filePath: string) {
   };
 }
 
-export function markdownToHtml(markdown: string): string {
+export function markdownToHtml(markdown: string): string | Promise<string> {
   return marked(markdown);
 } 

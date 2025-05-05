@@ -16,7 +16,7 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  const htmlContent = markdownToHtml(post.content);
+  const htmlContent = await markdownToHtml(post.content);
 
   return (
     <main className="min-h-screen flex flex-col">
