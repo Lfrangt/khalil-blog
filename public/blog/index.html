@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalil 博客 - 文章列表</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .post-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .post-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .post-title {
+            color: #3b82f6;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .post-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        .post-summary {
+            margin-bottom: 1rem;
+        }
+        .read-more {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .nav-logo {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav-links a {
+            margin-left: 1rem;
+            color: #4b5563;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-logo">Khalil 博客</a>
+        <div class="nav-links">
+            <a href="/">首页</a>
+            <a href="/blog">博客</a>
+            <a href="/about">关于</a>
+        </div>
+    </nav>
+
+    <h1>博客文章</h1>
+    
+    <div class="posts">
+        <article class="post-card">
+            <h2 class="post-title">Hello World</h2>
+            <div class="post-date">2023年5月1日</div>
+            <p class="post-summary">这是我的第一篇博客文章。在这里我会分享我的学习经历和经验。</p>
+            <a href="/blog/hello-world.html" class="read-more">阅读更多 →</a>
+        </article>
+        
+        <article class="post-card">
+            <h2 class="post-title">另一篇文章</h2>
+            <div class="post-date">2023年5月5日</div>
+            <p class="post-summary">这是另一篇博客文章的摘要内容，展示了多篇文章的列表效果。</p>
+            <a href="/blog/another-post.html" class="read-more">阅读更多 →</a>
+        </article>
+    </div>
+
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280;">
+        <p>© 2025 Khalil 博客. 保留所有权利.</p>
+    </footer>
+</body>
+</html> 
