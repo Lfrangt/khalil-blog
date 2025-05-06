@@ -1,0 +1,22 @@
+{
+  "build": {
+    "output_directory": "public"
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/index.html",
+      "status_code": 200
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html",
+      "status_code": 200
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "status_code": 200
+    }
+  ]
+} 
