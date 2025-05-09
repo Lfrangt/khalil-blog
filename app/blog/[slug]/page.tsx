@@ -85,6 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const res = await fetch('https://khalil-blog-1yl.pages.dev/posts.json');
+  const posts: { slug: string }[] = await res.json();
   return posts.map(post => ({ slug: post.slug }));
 } 

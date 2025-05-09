@@ -5,7 +5,8 @@ import BlogList from './components/BlogList';
 import Footer from './components/Footer';
 
 export default async function Home() {
-  const posts = getAllPosts();
+  const res = await fetch('/posts.json');
+  const posts = await res.json();
 
   return (
     <main className="min-h-screen flex flex-col">

@@ -6,7 +6,8 @@ import Footer from '../components/Footer';
 export const dynamic = 'force-dynamic';
 
 export default async function BlogPage() {
-  const posts = getAllPosts();
+  const res = await fetch('/posts.json');
+  const posts = await res.json();
 
   return (
     <main className="min-h-screen flex flex-col">

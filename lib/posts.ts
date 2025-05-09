@@ -4,11 +4,12 @@ import { parseMarkdownFile } from './markdown';
 import { Post, PostMeta } from '../types/post';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
+const POSTS_JSON = path.join(process.cwd(), 'public', 'posts.json');
 
 export function getPostSlugs(): string[] {
-  return fs.readdirSync(CONTENT_DIR)
-    .filter(file => file.endsWith('.md'))
-    .map(file => file.replace(/\.md$/, ''));
+  // 只从 posts.json 读取 slug
+  const posts: PostMeta[] = JSON.parse(fs.readFileSync(POSTS_JSON, 'utf-8'));
+  return posts.map(post => post.slug);
 }
 
 export function getPostBySlug(slug: string): Post {
@@ -24,9 +25,6 @@ export function getPostBySlug(slug: string): Post {
 }
 
 export function getAllPosts(): PostMeta[] {
-  const slugs = getPostSlugs();
-  const posts = slugs.map(slug => getPostBySlug(slug));
-  return posts
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .map(({ slug, title, date, summary }) => ({ slug, title, date, summary }));
+  // 只从 posts.json 读取所有文章元数据
+  return JSON.parse(fs.readFileSync(POSTS_JSON, 'utf-8'));
 } 
