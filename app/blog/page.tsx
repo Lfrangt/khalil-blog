@@ -1,13 +1,14 @@
-import { getAllPosts } from '../../lib/posts';
+import fs from 'fs';
+import path from 'path';
 import Navbar from '../components/Navbar';
 import BlogList from '../components/BlogList';
 import Footer from '../components/Footer';
 
 export const dynamic = 'force-dynamic';
 
-export default async function BlogPage() {
-  const res = await fetch('/posts.json');
-  const posts = await res.json();
+export default function BlogPage() {
+  const postsJsonPath = path.join(process.cwd(), 'public', 'posts.json');
+  const posts = JSON.parse(fs.readFileSync(postsJsonPath, 'utf-8'));
 
   return (
     <main className="min-h-screen flex flex-col">
