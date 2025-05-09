@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: Props) {
   );
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const postsJsonPath = path.join(process.cwd(), 'public', 'posts.json');
   const posts: { slug: string }[] = JSON.parse(fs.readFileSync(postsJsonPath, 'utf-8'));
   return posts.map(post => ({ slug: post.slug }));
