@@ -3,6 +3,8 @@ import { getAllPosts, getPostBySlug } from '../../../lib/posts';
 import { markdownToHtml } from '../../../lib/markdown';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import fs from 'fs';
+import path from 'path';
 
 interface Props {
   params: { slug: string };
@@ -85,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch('https://khalil-blog-1yl.pages.dev/posts.json');
-  const posts: { slug: string }[] = await res.json();
+  const postsJsonPath = path.join(process.cwd(), 'public', 'posts.json');
+  const posts: { slug: string }[] = JSON.parse(fs.readFileSync(postsJsonPath, 'utf-8'));
   return posts.map(post => ({ slug: post.slug }));
 } 
