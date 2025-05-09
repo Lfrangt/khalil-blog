@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getPostBySlug } from '../../../lib/posts';
+import { getAllPosts, getPostBySlug } from '../../../lib/posts';
 import { markdownToHtml } from '../../../lib/markdown';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -82,4 +82,9 @@ export default async function BlogPostPage({ params }: Props) {
       <Footer />
     </main>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map(post => ({ slug: post.slug }));
 } 
