@@ -22,7 +22,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       post: {
         slug: params.slug,
         title: data.title || params.slug,
-        date: data.date || '',
+        date: data.date ? String(data.date) : '',
         content: htmlContent,
       },
     },
